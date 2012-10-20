@@ -1,0 +1,3 @@
+[submodule "my-recipes/kaize-cookbooks"]
+    path = my-recipes/kaize-cookbooks
+    url = git@github.com:kaize/cookbooks.git
