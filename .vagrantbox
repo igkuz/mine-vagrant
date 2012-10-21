@@ -1,0 +1,1 @@
+vagrant box add work_squeeze http://dl.dropbox.com/u/937870/VMs/squeeze64.box
