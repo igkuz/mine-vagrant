@@ -1,3 +1,6 @@
 [submodule "my-recipes/kaize-cookbooks"]
 	path = my-recipes/kaize-cookbooks
 	url = git@github.com:kaize/cookbooks.git
+[submodule "my-recipes/cookbooks/rvm"]
+	path = my-recipes/cookbooks/rvm
+	url = https://github.com/fnichol/chef-rvm.git
