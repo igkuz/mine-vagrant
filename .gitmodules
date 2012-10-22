@@ -10,3 +10,6 @@
 [submodule "my-recipes/cookbooks/sphinx"]
 	path = my-recipes/cookbooks/sphinx
 	url = git://github.com/RiotGames/sphinx-cookbook.git
+[submodule "my-recipes/cookbooks/imagemagick"]
+	path = my-recipes/cookbooks/imagemagick
+	url = git://github.com/opscode-cookbooks/imagemagick.git

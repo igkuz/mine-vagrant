@@ -5,15 +5,19 @@
   "description" : "Base Role",
   "run_list": [
     "recipe[apt]",
-    "recipe[rvm::user]",
+    "recipe[rvm::system]",
+    "recipe[rvm::vagrant]",
     "recipe[postgresql]",
     "recipe[elasticsearch]",
-    "recipe[sphinx]"
+    "recipe[sphinx]",
+    "recipe[imagemagick::rmagick]"
   ],
   "override_attributes" : {
     "sphinx" : {
       "configure_flags" : [
-        "--with-pgsql"
+        "--with-pgsql",
+        "--without-mysql",
+        "--without-stemmer"
       ]
     }
   }

@@ -1,7 +1,10 @@
 package "vim"
 
 package "git-core"
-package "git-flow"
+# package "git-flow"
 
-package "imagemagick"
+# package 'libmysqlclient-dev
+
+
+# package "imagemagick"
 package "exim4"
