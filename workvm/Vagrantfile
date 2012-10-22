@@ -14,7 +14,7 @@ Vagrant::Config.run do |config|
   config.vm.customize ["modifyvm", :id, "--memory", 512]
 
   # Network setting, which i don't currently understand
-  config.vm.network :bridged
+  # config.vm.network :bridged
   # ------------------------
 
   # port forwarding, 80 on my machine to 8080 on VM
@@ -26,11 +26,12 @@ Vagrant::Config.run do |config|
   # Включаем chef_solo и конфигурируем его
 
    config.vm.provision :chef_solo do |chef|
-     chef.cookbooks_path = "../my-recipes/cookbooks"
+     chef.cookbooks_path = ["../my-recipes/cookbooks", "../my-recipes/kaize-cookbooks"]
      chef.roles_path = "../my-recipes/roles"
     # chef.data_bags_path = "../my-recipes/data_bags"
-    # chef.add_recipe "mysql"
-    #  chef.add_role "web"
+    # chef.add_recipe "apt"
+    # chef.add_recipe "postgresql"
+      chef.add_role "base"
 
      # You may also specify custom JSON attributes:
      # chef.json = { :mysql_password => "foo" }
