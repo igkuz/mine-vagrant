@@ -4,3 +4,6 @@
 [submodule "my-recipes/cookbooks/rvm"]
 	path = my-recipes/cookbooks/rvm
 	url = https://github.com/fnichol/chef-rvm.git
+[submodule "my-recipes/cookbooks/build-essential"]
+	path = my-recipes/cookbooks/build-essential
+	url = git://github.com/cookbooks/build-essential.git

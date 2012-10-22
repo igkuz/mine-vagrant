@@ -7,6 +7,14 @@
     "recipe[apt]",
     "recipe[rvm::user]",
     "recipe[postgresql]",
-    "recipe[elasticsearch]"
-  ]
+    "recipe[elasticsearch]",
+    "recipe[sphinx]"
+  ],
+  "override_attributes" : {
+    "sphinx" : {
+      "configure_flags" : [
+        "--with-pgsql"
+      ]
+    }
+  }
 }
