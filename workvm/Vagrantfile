@@ -7,18 +7,16 @@ Vagrant::Config.run do |config|
   config.vm.box = "work_squeeze"
   config.vm.box_url = "http://dl.dropbox.com/u/937870/VMs/squeeze64.box"
 
-  # Boot with a GUI so you can see the screen. (Default is headless)
-  # config.vm.boot_mode = :gui
-
   # Changes the memory allocation, now its 512Mb for VM
   config.vm.customize ["modifyvm", :id, "--memory", 512]
 
   # Network setting, which i don't currently understand
-  # config.vm.network :bridged
+   config.vm.network :bridged
   # ------------------------
-
+  # config.vm.boot_mode = :gui
   # port forwarding, 80 on my machine to 8080 on VM
-  config.vm.forward_port 80, 8080
+  config.vm.forward_port 8080, 8080
+  config.vm.forward_port 22, 2222
 
   # Расшариваем на VM папку с проектами, "ярлык" - "путь на VM" - "путь локально"
   config.vm.share_folder "apps", "/apps", "/apps"
@@ -34,7 +32,17 @@ Vagrant::Config.run do |config|
       chef.add_role "base"
 
      # You may also specify custom JSON attributes:
-     # chef.json = { :mysql_password => "foo" }
+     chef.json = {
+         :rvm => {
+             :user_installs => [
+               {
+                :user => "vagrant",
+                :rubies => ['1.9.3'],
+                :default_ruby => '1.9.3'
+               }
+             ]
+         }
+     }
    end
 
   # Enable provisioning with chef server, specifying the chef server URL,
