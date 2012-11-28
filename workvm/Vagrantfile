@@ -8,7 +8,7 @@ Vagrant::Config.run do |config|
   config.vm.box_url = "http://dl.dropbox.com/u/937870/VMs/squeeze64.box"
 
   # Changes the memory allocation, now its 512Mb for VM
-  config.vm.customize ["modifyvm", :id, "--memory", 512]
+  config.vm.customize ["modifyvm", :id, "--memory", 1024]
 
   # Network setting, which i don't currently understand
    config.vm.network :bridged
